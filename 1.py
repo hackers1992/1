@@ -239,7 +239,7 @@ def pilih_super():
 	elif peak =="2":
 		os.system('clear')
 		print logo
-		idt = raw_input("\033[1;96m[*] Enter ID : ")
+		idt = raw_input("\033[1;96m[*] Enter Group Or Page Public Post ID : ")
 		try:
 			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
 			op = json.loads(jok.text)
@@ -249,7 +249,7 @@ def pilih_super():
 			raw_input("\n\033[1;96m[\033[1;94mBack\033[1;96m]")
 			super()
 		print"\033[1;35;40m[✺] Getting IDs..."
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/"+idt+"/likes?access_token="+toket+"&limit=5000")
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
