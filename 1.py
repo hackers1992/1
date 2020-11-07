@@ -82,23 +82,7 @@ print  """\x1b[0;31m [¤] \x1b[0;31mASSALAM O ALAIKUM\x1b[0;31m  \033[1;96m   [�
 \033[1;93m [¤] \x1b[0;31mTOOLS BY AAHIL\x1b[1;96m  [¤] \x1b[0;31mYOUTUBE  : AAHIL CREATIONSs\x1b[0;31m"""
 print " \x1b[1;93m⚔══════════════════════════☠═══════════════════════════⚔"
 
-CorrectUsername = "rana"
-CorrectPassword = "rana"
 
-loop = 'true'
-while (loop == 'true'):
-    username = raw_input("\033[1;96m[☆] \x1b[0;31mUSERNAME TOOLS INI \x1b[1;96m>>>> ")
-    if (username == CorrectUsername):
-    	password = raw_input("\033[1;96m[☆] \x1b[0;31mPASSWORD TOOLS INI \x1b[1;96m>>>> ")
-        if (password == CorrectPassword):
-            print "Logged in successfully as " + username
-            loop = 'false'
-        else:
-            print "yang bener dong"
-            os.system('xdg-open https://wa.me/6285691015635')
-    else:
-        print "salah sayang!"
-        os.system('xdg-open https://wa.me/6285691015635')
 
 def login():
 	os.system('clear')
